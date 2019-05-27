@@ -47,7 +47,7 @@ public class EmployeeController {
  * @param emp the emp
  * @return the employee
  */
-@PostMapping("/addemployee")
+@PostMapping("/addEmployee")
 	public Employee addEmployee(Employee emp) {
 		
 		
