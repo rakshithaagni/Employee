@@ -63,7 +63,7 @@ public class EmployeeController {
 	 * @param eid the eid
 	 * @return the string
 	 */
-	@GetMapping("/deleteEmployee/{eid}")
+	@GetMapping("/deleteemployee/{eid}")
 	@ResponseBody
 	public String deleteEmployee(@PathVariable int eid) {
 		
