@@ -1,0 +1,1 @@
+insert into employee values(523979,'rakshitha');
