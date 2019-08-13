@@ -47,7 +47,9 @@ public class EmployeeController {
  * @param emp the emp
  * @return the employee
  */
-@PostMapping("/addEmploy")
+
+@PostMapping("/addemployee")
+
 	public Employee addEmployee(Employee emp) {
 		
 		
@@ -63,7 +65,8 @@ public class EmployeeController {
 	 * @param eid the eid
 	 * @return the string
 	 */
-	@GetMapping("/deleteEmployee/{eid}")
+
+	@GetMapping("/deleteemployee/{eid}")
 	@ResponseBody
 	public String deleteEmployee(@PathVariable int eid) {
 		
