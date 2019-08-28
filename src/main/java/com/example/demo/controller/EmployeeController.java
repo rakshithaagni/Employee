@@ -1,62 +1,45 @@
 package com.example.demo.controller;
 
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpMethod;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.demo.dao.EmployeeRepo;
 import com.example.demo.model.Employee;
 import com.example.demo.service.EmployeeService;
 
-
-
-
-
-// TODO: Auto-generated Javadoc
 /**
  * The Class EmployeeController.
  */
 @RestController
 public class EmployeeController {
-	
+
 	/** The employeeservice. */
 	@Autowired
 	EmployeeService employeeservice;
-	
-	
-	
-//	@RequestMapping("/get")
-//	public String gett() {
-//		return "get called";
-//	}
+
+	@RequestMapping("/hello")
+	public String gett() {
+		return "Hello, World!";
+	}
 
 	/**
- * Adds the employee.
- *
- * @param emp the emp
- * @return the employee
- */
+	 * Adds the employee.
+	 *
+	 * @param emp the emp
+	 * @return the employee
+	 */
 
-@PostMapping("/addemployee")
-
+	@PostMapping("/addemployee")
 	public Employee addEmployee(Employee emp) {
-		
-		
-	return employeeservice.addEmployee(emp);
-	
-		
-		
+
+		return employeeservice.addEmployee(emp);
+
 	}
 
 	/**
@@ -69,16 +52,11 @@ public class EmployeeController {
 	@GetMapping("/deleteemployee/{eid}")
 	@ResponseBody
 	public String deleteEmployee(@PathVariable int eid) {
-		
-		
+
 		return employeeservice.deleteEmployee(eid);
-	    
-		
-		
 
 	}
 
-	
 	/**
 	 * Gets the employees.
 	 *
@@ -87,7 +65,7 @@ public class EmployeeController {
 	@GetMapping("/employees")
 	@ResponseBody
 	public List<Employee> getEmployees() {
-	return employeeservice.getEmployees();
+		return employeeservice.getEmployees();
 
 	}
 
@@ -100,7 +78,7 @@ public class EmployeeController {
 	@GetMapping("/employee/{eid}")
 	@ResponseBody
 	public Employee getEmployee(@PathVariable int eid) {
-		return   employeeservice.getEmployee(eid);
+		return employeeservice.getEmployee(eid);
 
 	}
 //	
